@@ -16,7 +16,44 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else {
+            return
+        }
+        
+        let firstNavController: UINavigationController = {
+            let navigationController = UINavigationController(rootViewController: HomeViewController())
+            navigationController.navigationBar.prefersLargeTitles = true
+            navigationController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
+
+            return navigationController
+        }()
+        
+        let secondNavController: UINavigationController = {
+            let navigationController = UINavigationController(rootViewController: CartViewController())
+            navigationController.navigationBar.prefersLargeTitles = true
+            navigationController.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "cart.fill"), tag: 1)
+            return navigationController
+        }()
+
+        let tabBarController: UITabBarController = {
+            let tabBar = UITabBarController()
+            tabBar.tabBar.backgroundColor = .white
+            tabBar.tabBar.unselectedItemTintColor = .lightGray
+            tabBar.tabBar.selectedImageTintColor = .darkGray
+            tabBar.tabBar.isTranslucent = false
+            tabBar.viewControllers = [firstNavController, secondNavController]
+
+            return tabBar
+        }()
+        
+
+        self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        
+        self.window?.windowScene = windowScene
+        
+        window?.rootViewController = tabBarController
+        
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

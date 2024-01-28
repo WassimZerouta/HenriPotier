@@ -13,6 +13,16 @@
 		CF0458472B63CB9700E3CB27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF0458452B63CB9700E3CB27 /* LaunchScreen.storyboard */; };
 		CF04584F2B63E1C100E3CB27 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF04584E2B63E1C100E3CB27 /* HomeViewController.swift */; };
 		CF0458512B63E74700E3CB27 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0458502B63E74700E3CB27 /* CartViewController.swift */; };
+		CF0458532B63FA2F00E3CB27 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0458522B63FA2F00E3CB27 /* Books.swift */; };
+		CF0458552B63FB7900E3CB27 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0458542B63FB7900E3CB27 /* APIManager.swift */; };
+		CF0458572B6441F400E3CB27 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0458562B6441F400E3CB27 /* ErrorHandling.swift */; };
+		CF0458592B64436700E3CB27 /* BooksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0458582B64436700E3CB27 /* BooksService.swift */; };
+		CF04585B2B66E35F00E3CB27 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF04585A2B66E35F00E3CB27 /* HomeViewModel.swift */; };
+		CF04585E2B66E86E00E3CB27 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = CF04585D2B66E86E00E3CB27 /* RxBlocking */; };
+		CF0458602B66E86E00E3CB27 /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CF04585F2B66E86E00E3CB27 /* RxBlocking-Dynamic */; };
+		CF0458622B66E86E00E3CB27 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CF0458612B66E86E00E3CB27 /* RxCocoa */; };
+		CF0458642B66E86E00E3CB27 /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CF0458632B66E86E00E3CB27 /* RxCocoa-Dynamic */; };
+		CF0458662B66E86E00E3CB27 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CF0458652B66E86E00E3CB27 /* RxRelay */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,11 @@
 		CF0458482B63CB9700E3CB27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF04584E2B63E1C100E3CB27 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CF0458502B63E74700E3CB27 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		CF0458522B63FA2F00E3CB27 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		CF0458542B63FB7900E3CB27 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CF0458562B6441F400E3CB27 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		CF0458582B64436700E3CB27 /* BooksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksService.swift; sourceTree = "<group>"; };
+		CF04585A2B66E35F00E3CB27 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +46,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF0458662B66E86E00E3CB27 /* RxRelay in Frameworks */,
+				CF0458642B66E86E00E3CB27 /* RxCocoa-Dynamic in Frameworks */,
+				CF0458622B66E86E00E3CB27 /* RxCocoa in Frameworks */,
+				CF04585E2B66E86E00E3CB27 /* RxBlocking in Frameworks */,
+				CF0458602B66E86E00E3CB27 /* RxBlocking-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +83,11 @@
 				CF0458432B63CB9700E3CB27 /* Assets.xcassets */,
 				CF0458452B63CB9700E3CB27 /* LaunchScreen.storyboard */,
 				CF0458482B63CB9700E3CB27 /* Info.plist */,
+				CF0458522B63FA2F00E3CB27 /* Books.swift */,
+				CF0458542B63FB7900E3CB27 /* APIManager.swift */,
+				CF0458562B6441F400E3CB27 /* ErrorHandling.swift */,
+				CF0458582B64436700E3CB27 /* BooksService.swift */,
+				CF04585A2B66E35F00E3CB27 /* HomeViewModel.swift */,
 			);
 			path = HenryPotier;
 			sourceTree = "<group>";
@@ -83,6 +108,13 @@
 			dependencies = (
 			);
 			name = HenryPotier;
+			packageProductDependencies = (
+				CF04585D2B66E86E00E3CB27 /* RxBlocking */,
+				CF04585F2B66E86E00E3CB27 /* RxBlocking-Dynamic */,
+				CF0458612B66E86E00E3CB27 /* RxCocoa */,
+				CF0458632B66E86E00E3CB27 /* RxCocoa-Dynamic */,
+				CF0458652B66E86E00E3CB27 /* RxRelay */,
+			);
 			productName = HenryPotier;
 			productReference = CF0458372B63CB9600E3CB27 /* HenryPotier.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +143,9 @@
 				Base,
 			);
 			mainGroup = CF04582E2B63CB9600E3CB27;
+			packageReferences = (
+				CF04585C2B66E86E00E3CB27 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = CF0458382B63CB9600E3CB27 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,10 +172,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF0458552B63FB7900E3CB27 /* APIManager.swift in Sources */,
+				CF04585B2B66E35F00E3CB27 /* HomeViewModel.swift in Sources */,
 				CF0458512B63E74700E3CB27 /* CartViewController.swift in Sources */,
+				CF0458572B6441F400E3CB27 /* ErrorHandling.swift in Sources */,
 				CF04583B2B63CB9600E3CB27 /* AppDelegate.swift in Sources */,
+				CF0458592B64436700E3CB27 /* BooksService.swift in Sources */,
 				CF04583D2B63CB9600E3CB27 /* SceneDelegate.swift in Sources */,
 				CF04584F2B63E1C100E3CB27 /* HomeViewController.swift in Sources */,
+				CF0458532B63FA2F00E3CB27 /* Books.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +395,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF04585C2B66E86E00E3CB27 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF04585D2B66E86E00E3CB27 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF04585C2B66E86E00E3CB27 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		CF04585F2B66E86E00E3CB27 /* RxBlocking-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF04585C2B66E86E00E3CB27 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxBlocking-Dynamic";
+		};
+		CF0458612B66E86E00E3CB27 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF04585C2B66E86E00E3CB27 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CF0458632B66E86E00E3CB27 /* RxCocoa-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF04585C2B66E86E00E3CB27 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxCocoa-Dynamic";
+		};
+		CF0458652B66E86E00E3CB27 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF04585C2B66E86E00E3CB27 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF04582F2B63CB9600E3CB27 /* Project object */;
 }

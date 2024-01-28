@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
+        // Set the navigation from the home view
         let firstNavController: UINavigationController = {
             let navigationController = UINavigationController(rootViewController: HomeViewController())
             navigationController.navigationBar.prefersLargeTitles = true
@@ -28,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return navigationController
         }()
         
+        // Set the navigation from the cart view
         let secondNavController: UINavigationController = {
             let navigationController = UINavigationController(rootViewController: CartViewController())
             navigationController.navigationBar.prefersLargeTitles = true
@@ -35,6 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return navigationController
         }()
 
+        // Set the tabBar
         let tabBarController: UITabBarController = {
             let tabBar = UITabBarController()
             tabBar.tabBar.backgroundColor = .white
@@ -51,6 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window?.windowScene = windowScene
         
+        // Define the tabBarController as the root of our app
         window?.rootViewController = tabBarController
         
         window?.makeKeyAndVisible()

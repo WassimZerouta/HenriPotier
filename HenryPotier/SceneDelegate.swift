@@ -40,10 +40,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Set the tabBar
         let tabBarController: UITabBarController = {
             let tabBar = UITabBarController()
-            tabBar.tabBar.backgroundColor = .white
-            tabBar.tabBar.unselectedItemTintColor = .lightGray
-            tabBar.tabBar.selectedImageTintColor = .darkGray
-            tabBar.tabBar.isTranslucent = false
+            tabBar.tabBar.backgroundColor = .black
+            tabBar.tabBar.unselectedItemTintColor = .darkGray
+            tabBar.tabBar.selectedImageTintColor = .lightGray
+            
             tabBar.viewControllers = [firstNavController, secondNavController]
 
             return tabBar

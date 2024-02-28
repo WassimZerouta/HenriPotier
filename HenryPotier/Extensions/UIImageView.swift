@@ -10,6 +10,7 @@ import RxCocoa
 import UIKit
 
 extension UIImageView {
+    
     private struct AssociatedKeys {
         static var disposeBag = "disposeBag"
     }

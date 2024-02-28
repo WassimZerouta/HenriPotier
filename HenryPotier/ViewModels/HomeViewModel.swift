@@ -14,15 +14,11 @@ class HomeViewModel {
     
     let books: PublishSubject<Books> = PublishSubject()
     let error: PublishSubject<String> = PublishSubject()
-    let isLoading: PublishSubject<Bool> = PublishSubject()
     
     func displayBook() {
-        self.isLoading.onNext(true)
-
         APIManager().fetchBook { result in
             switch result {
             case .success(let books):
-                self.isLoading.onNext(false)
                 self.books.onNext(books)
                 
             case .failure(let error):
@@ -45,9 +41,4 @@ class HomeViewModel {
         }
         
     }
-    
-    
-    
-    
-    
 }

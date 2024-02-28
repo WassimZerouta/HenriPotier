@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class CartManager {
     
@@ -13,8 +15,16 @@ class CartManager {
     
     private init() {}
     
-    var cart = Books()
+     let cartSubject = BehaviorSubject<Books>(value: [])
     
+    
+    var cart: Books {
+        do {
+            return try cartSubject.value()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
     
     func cartAction(book: Book) -> Bool {
         if cart.contains(where: { $0.isbn == book.isbn }) {
@@ -22,45 +32,35 @@ class CartManager {
             return false
         } else {
             addToCart(book: book)
-            print(cart)
             return true
         }
     }
-    
     
     func isBookInCart(book: Book) -> Bool {
-        if cart.contains(where: { $0.isbn == book.isbn }) {
-            return true
-        } else {
-            print(cart)
-            return false
-        }
+        return cart.contains(where: { $0.isbn == book.isbn })
     }
-    
     
     func isbnConcat() -> String {
-        guard !cart.isEmpty else { return "" }
-        
-        let isbns = cart
-            .map { $0.isbn }
-            .reduce(""){$0+$1}
-        
-        return isbns
-        
+        return cart.map { $0.isbn }.joined()
     }
     
+    func totalPrice() -> Int {
+        let totalPrice = cart.reduce(0) { $0 + $1.price }
+        return totalPrice
+    }
     
     //----------------- PRIVATE ----------------------\\
     
     private func addToCart(book: Book) {
-        cart.append(book)
+        var currentCart = cart
+        currentCart.append(book)
+        cartSubject.onNext(currentCart)
     }
     
     private func removeToCart(book: Book) {
-        cart.removeAll { book in
-            book.isbn == book.isbn
-        }
+        var currentCart = cart
+        currentCart.removeAll { $0.isbn == book.isbn }
+        cartSubject.onNext(currentCart)
     }
-    
     
 }

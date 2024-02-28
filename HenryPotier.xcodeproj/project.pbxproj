@@ -26,9 +26,13 @@
 		CF0458682B67945600E3CB27 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0458672B67945600E3CB27 /* BookTableViewCell.swift */; };
 		CF04586B2B67A15000E3CB27 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF04586A2B67A15000E3CB27 /* UIImageView.swift */; };
 		CF04586D2B682FD300E3CB27 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF04586C2B682FD300E3CB27 /* DetailViewController.swift */; };
-		CF0458702B6839E400E3CB27 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = CF04586F2B6839E400E3CB27 /* Hero */; };
 		CF0458722B684A2600E3CB27 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0458712B684A2600E3CB27 /* DetailViewModel.swift */; };
 		CF0458742B685C8200E3CB27 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0458732B685C8200E3CB27 /* CartManager.swift */; };
+		CF92A6462B7A630500DF92FB /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92A6452B7A630500DF92FB /* AppStyle.swift */; };
+		CF92A6482B7A7EB600DF92FB /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92A6472B7A7EB600DF92FB /* CartViewModel.swift */; };
+		CF92A64A2B7BB4F300DF92FB /* Offers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92A6492B7BB4F300DF92FB /* Offers.swift */; };
+		CF92A64C2B7BE5E600DF92FB /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92A64B2B7BE5E600DF92FB /* PopupViewController.swift */; };
+		CF92A64E2B7CF5F000DF92FB /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92A64D2B7CF5F000DF92FB /* CartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,11 @@
 		CF04586C2B682FD300E3CB27 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CF0458712B684A2600E3CB27 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		CF0458732B685C8200E3CB27 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		CF92A6452B7A630500DF92FB /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		CF92A6472B7A7EB600DF92FB /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		CF92A6492B7BB4F300DF92FB /* Offers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offers.swift; sourceTree = "<group>"; };
+		CF92A64B2B7BE5E600DF92FB /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		CF92A64D2B7CF5F000DF92FB /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +70,6 @@
 				CF0458642B66E86E00E3CB27 /* RxCocoa-Dynamic in Frameworks */,
 				CF0458622B66E86E00E3CB27 /* RxCocoa in Frameworks */,
 				CF04585E2B66E86E00E3CB27 /* RxBlocking in Frameworks */,
-				CF0458702B6839E400E3CB27 /* Hero in Frameworks */,
 				CF0458602B66E86E00E3CB27 /* RxBlocking-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,23 +96,16 @@
 		CF0458392B63CB9600E3CB27 /* HenryPotier */ = {
 			isa = PBXGroup;
 			children = (
-				CF0458692B679D7000E3CB27 /* Extensions */,
+				CF0458482B63CB9700E3CB27 /* Info.plist */,
 				CF04583A2B63CB9600E3CB27 /* AppDelegate.swift */,
 				CF04583C2B63CB9600E3CB27 /* SceneDelegate.swift */,
-				CF04584E2B63E1C100E3CB27 /* HomeViewController.swift */,
-				CF0458502B63E74700E3CB27 /* CartViewController.swift */,
+				CFB6BAC52B8FBE3E00D382E9 /* Helpers */,
+				CFB6BAC32B8FBBEB00D382E9 /* Services */,
+				CFB6BAC22B8FBBDF00D382E9 /* ViewModels */,
+				CFB6BAC12B8FBBD700D382E9 /* Views */,
+				CFB6BAC02B8FBBD000D382E9 /* Models */,
+				CF0458692B679D7000E3CB27 /* Extensions */,
 				CF0458432B63CB9700E3CB27 /* Assets.xcassets */,
-				CF0458452B63CB9700E3CB27 /* LaunchScreen.storyboard */,
-				CF0458482B63CB9700E3CB27 /* Info.plist */,
-				CF0458522B63FA2F00E3CB27 /* Books.swift */,
-				CF0458542B63FB7900E3CB27 /* APIManager.swift */,
-				CF0458562B6441F400E3CB27 /* ErrorHandling.swift */,
-				CF0458582B64436700E3CB27 /* BooksService.swift */,
-				CF04585A2B66E35F00E3CB27 /* HomeViewModel.swift */,
-				CF0458672B67945600E3CB27 /* BookTableViewCell.swift */,
-				CF04586C2B682FD300E3CB27 /* DetailViewController.swift */,
-				CF0458712B684A2600E3CB27 /* DetailViewModel.swift */,
-				CF0458732B685C8200E3CB27 /* CartManager.swift */,
 			);
 			path = HenryPotier;
 			sourceTree = "<group>";
@@ -115,6 +116,66 @@
 				CF04586A2B67A15000E3CB27 /* UIImageView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CFB6BAC02B8FBBD000D382E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF92A6492B7BB4F300DF92FB /* Offers.swift */,
+				CF0458522B63FA2F00E3CB27 /* Books.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CFB6BAC12B8FBBD700D382E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF0458452B63CB9700E3CB27 /* LaunchScreen.storyboard */,
+				CF92A64B2B7BE5E600DF92FB /* PopupViewController.swift */,
+				CF04586C2B682FD300E3CB27 /* DetailViewController.swift */,
+				CF0458502B63E74700E3CB27 /* CartViewController.swift */,
+				CF04584E2B63E1C100E3CB27 /* HomeViewController.swift */,
+				CFB6BAC42B8FBC3F00D382E9 /* Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CFB6BAC22B8FBBDF00D382E9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CF0458712B684A2600E3CB27 /* DetailViewModel.swift */,
+				CF92A6472B7A7EB600DF92FB /* CartViewModel.swift */,
+				CF04585A2B66E35F00E3CB27 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CFB6BAC32B8FBBEB00D382E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CF0458732B685C8200E3CB27 /* CartManager.swift */,
+				CF0458542B63FB7900E3CB27 /* APIManager.swift */,
+				CF0458582B64436700E3CB27 /* BooksService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CFB6BAC42B8FBC3F00D382E9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF92A64D2B7CF5F000DF92FB /* CartTableViewCell.swift */,
+				CF0458672B67945600E3CB27 /* BookTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CFB6BAC52B8FBE3E00D382E9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CF0458562B6441F400E3CB27 /* ErrorHandling.swift */,
+				CF92A6452B7A630500DF92FB /* AppStyle.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +200,6 @@
 				CF0458612B66E86E00E3CB27 /* RxCocoa */,
 				CF0458632B66E86E00E3CB27 /* RxCocoa-Dynamic */,
 				CF0458652B66E86E00E3CB27 /* RxRelay */,
-				CF04586F2B6839E400E3CB27 /* Hero */,
 			);
 			productName = HenryPotier;
 			productReference = CF0458372B63CB9600E3CB27 /* HenryPotier.app */;
@@ -171,7 +231,6 @@
 			mainGroup = CF04582E2B63CB9600E3CB27;
 			packageReferences = (
 				CF04585C2B66E86E00E3CB27 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				CF04586E2B6839E400E3CB27 /* XCRemoteSwiftPackageReference "Hero" */,
 			);
 			productRefGroup = CF0458382B63CB9600E3CB27 /* Products */;
 			projectDirPath = "";
@@ -203,11 +262,16 @@
 				CF04585B2B66E35F00E3CB27 /* HomeViewModel.swift in Sources */,
 				CF0458512B63E74700E3CB27 /* CartViewController.swift in Sources */,
 				CF04586D2B682FD300E3CB27 /* DetailViewController.swift in Sources */,
+				CF92A6482B7A7EB600DF92FB /* CartViewModel.swift in Sources */,
+				CF92A64C2B7BE5E600DF92FB /* PopupViewController.swift in Sources */,
 				CF0458572B6441F400E3CB27 /* ErrorHandling.swift in Sources */,
 				CF04583B2B63CB9600E3CB27 /* AppDelegate.swift in Sources */,
+				CF92A6462B7A630500DF92FB /* AppStyle.swift in Sources */,
 				CF0458592B64436700E3CB27 /* BooksService.swift in Sources */,
+				CF92A64A2B7BB4F300DF92FB /* Offers.swift in Sources */,
 				CF04586B2B67A15000E3CB27 /* UIImageView.swift in Sources */,
 				CF04583D2B63CB9600E3CB27 /* SceneDelegate.swift in Sources */,
+				CF92A64E2B7CF5F000DF92FB /* CartTableViewCell.swift in Sources */,
 				CF0458742B685C8200E3CB27 /* CartManager.swift in Sources */,
 				CF0458722B684A2600E3CB27 /* DetailViewModel.swift in Sources */,
 				CF04584F2B63E1C100E3CB27 /* HomeViewController.swift in Sources */,
@@ -437,14 +501,6 @@
 				minimumVersion = 6.6.0;
 			};
 		};
-		CF04586E2B6839E400E3CB27 /* XCRemoteSwiftPackageReference "Hero" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.2;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -472,11 +528,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CF04585C2B66E86E00E3CB27 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
-		};
-		CF04586F2B6839E400E3CB27 /* Hero */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CF04586E2B6839E400E3CB27 /* XCRemoteSwiftPackageReference "Hero" */;
-			productName = Hero;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

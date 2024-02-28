@@ -21,12 +21,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Home"
+        self.navigationItem.title = "Accueil"
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.register(BookTableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.showsVerticalScrollIndicator = false
         setUptableViewConstraints()
         setUpBindings()
         homeViewModel.displayBook()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     private func setUpBindings() {
@@ -49,6 +55,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             .observe(on: MainScheduler.asyncInstance)
             .bind(to: tableView.rx.items(cellIdentifier: cellId, cellType: BookTableViewCell.self)) {row,book,cell in
                 cell.book = book
+                cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
 
@@ -75,7 +82,7 @@ extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = DetailViewController(book: self.books[indexPath.row])
-        navigationController?.pushViewController(nextVC, animated: true)
+        navigationController?.pushViewController(nextVC, animated: false)
         
     }
 }

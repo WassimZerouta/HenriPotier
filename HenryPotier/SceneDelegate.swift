@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+
+    let disposeBag = DisposeBag()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -24,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let firstNavController: UINavigationController = {
             let navigationController = UINavigationController(rootViewController: HomeViewController())
             navigationController.navigationBar.prefersLargeTitles = true
-            navigationController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
+            navigationController.tabBarItem = UITabBarItem(title: "Accueil", image: UIImage(systemName: "house.fill"), tag: 0)
 
             return navigationController
         }()
@@ -33,19 +36,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let secondNavController: UINavigationController = {
             let navigationController = UINavigationController(rootViewController: CartViewController())
             navigationController.navigationBar.prefersLargeTitles = true
-            navigationController.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "cart.fill"), tag: 1)
             return navigationController
         }()
+        
+        CartManager.shared.cartSubject
+            .observe(on: MainScheduler.asyncInstance)
+                    .subscribe { cart in
+                        let cartIcon = cart.isEmpty ? "cart" : "cart.fill"
+                        let secondNavControllerImage = UIImage(systemName: cartIcon)
+                        secondNavController.tabBarItem.image = secondNavControllerImage?.withTintColor(cart.isEmpty ? .gray : .systemMint.withAlphaComponent(0.5), renderingMode: .alwaysOriginal)
+                        secondNavController.title = "Panier"
+                    }
+                    .disposed(by: disposeBag)
 
         // Set the tabBar
         let tabBarController: UITabBarController = {
-            let tabBar = UITabBarController()
-            tabBar.tabBar.backgroundColor = .black
-            tabBar.tabBar.unselectedItemTintColor = .darkGray
-            tabBar.tabBar.selectedImageTintColor = .lightGray
-            
+            let tabBar = UITabBarController()            
             tabBar.viewControllers = [firstNavController, secondNavController]
-
             return tabBar
         }()
         
@@ -56,6 +63,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Define the tabBarController as the root of our app
         window?.rootViewController = tabBarController
+        tabBarController.view.backgroundColor = .systemBackground
         
         window?.makeKeyAndVisible()
     }

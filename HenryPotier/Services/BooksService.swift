@@ -9,4 +9,5 @@ import Foundation
 
 protocol BooksServices {
     func fetchBook(completion: @escaping (Result<Books, CustomError>) -> Void)
+    func fetchOffers(total: Int, completion: @escaping (Result<Int, CustomError>) -> Void)
 }
